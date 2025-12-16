@@ -1,0 +1,6 @@
+Päivämäärä,Tyyppi,Alku km,Loppu km,Lähtöosoite,Kohdeosoite,Lähtö lat,Lähtö lon,Kohde lat,Kohde lon,Lisätiedot
+2024-12-01T08:00:00.000Z,work,10000,10050,"Kotikatu 1, Helsinki","Työkatu 5, Helsinki",60.1699,24.9384,60.1699,24.9384,"Aamun työmatka"
+2024-12-01T17:00:00.000Z,work,10050,10100,"Työkatu 5, Helsinki","Kotikatu 1, Helsinki",60.1699,24.9384,60.1699,24.9384,"Illan kotimatka"
+2024-12-02T10:00:00.000Z,private,10100,10150,"Kotikatu 1, Helsinki","Kauppakeskus, Espoo",60.1699,24.9384,60.2055,24.6559,"Kauppareissu"
+2024-12-03T08:30:00.000Z,work,10150,10200,"Kotikatu 1, Helsinki","Työkatu 5, Helsinki",60.1699,24.9384,60.1699,24.9384,"Työmatka"
+2024-12-03T16:30:00.000Z,work,10200,10250,"Työkatu 5, Helsinki","Kotikatu 1, Helsinki",60.1699,24.9384,60.1699,24.9384,"Kotimatka"

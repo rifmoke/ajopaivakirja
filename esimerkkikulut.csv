@@ -1,0 +1,6 @@
+Päivämäärä,Kategoria,Summa,Yritys,Litrat,Hinta/litra,Kuitti,Lisätiedot
+2024-12-01T12:00:00.000Z,Polttoaine,65.50,Neste,35.0,1.871,,95E10 tankki täyteen
+2024-12-05T14:30:00.000Z,Pesu,15.00,Shell,,,,"Ulkopesu + sisäpesu"
+2024-12-10T09:00:00.000Z,Huolto,250.00,Autoliike Oy,,,,Määräaikaishuolto 60000 km
+2024-12-12T16:00:00.000Z,Polttoaine,72.30,ABC,38.5,1.878,,"98E5 tankkaus"
+2024-12-15T10:00:00.000Z,Pysäköinti,8.50,P-Helsinki,,,,"Keskustan pysäköinti 3h"
