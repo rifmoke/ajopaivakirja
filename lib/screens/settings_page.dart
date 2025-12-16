@@ -85,7 +85,7 @@ class SettingsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      subscriptionProvider.isPremium ? 'Premium-jäsen' : 'Päivitä Premium-jäseneksi',
+                      subscriptionProvider.isPremium ? 'Premium-jäsen' : 'Tilaukset',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       subscriptionProvider.isPremium 
                           ? 'Kiitos tuestasi!' 
-                          : 'Ilmainen 30 päivän kokeilu',
+                          : 'Näytä Premium-tilaukset',
                       style: TextStyle(
                         fontSize: 14,
                         color: subscriptionProvider.isPremium 

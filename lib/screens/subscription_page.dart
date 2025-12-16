@@ -58,34 +58,77 @@ class SubscriptionPage extends StatelessWidget {
 
             // Features
             Text(
-              'Premium-ominaisuudet',
+              'Premium-jäsenyys',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 12),
-            _FeatureItem(
-              icon: Icons.cloud_upload,
-              title: 'Automaattinen varmuuskopiointi',
-              description: 'Tietosi varmuuskopioidaan automaattisesti pilveen',
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: AppTheme.primaryRed.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: AppTheme.primaryRed, width: 2),
+              ),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.star,
+                    size: 64,
+                    color: AppTheme.primaryRed,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Koko sovellus käytössäsi',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.primaryRed,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Premium-jäsenyydellä saat koko sovelluksen käyttöösi:\n\n'
+                    '✓ Kirjaa matkat ja kulut\n'
+                    '✓ Seuraa tilastoja\n'
+                    '✓ Lisää useita ajoneuvoja\n'
+                    '✓ Lisää muistutuksia\n'
+                    '✓ Tallenna kuitit\n'
+                    '✓ Vie tiedot\n'
+                    '✓ Kaikki tulevat ominaisuudet',
+                    style: TextStyle(
+                      fontSize: 16,
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-            _FeatureItem(
-              icon: Icons.analytics,
-              title: 'Kehittyneet tilastot',
-              description: 'Yksityiskohtaiset raportit ja analyysit',
-            ),
-            _FeatureItem(
-              icon: Icons.receipt_long,
-              title: 'Rajaton määrä kuitteja',
-              description: 'Tallenna rajattomasti kuitteja',
-            ),
-            _FeatureItem(
-              icon: Icons.file_download,
-              title: 'Vie PDF-muotoon',
-              description: 'Vie raportit PDF-tiedostoina',
-            ),
-            _FeatureItem(
-              icon: Icons.support,
-              title: 'Premium-tuki',
-              description: 'Etusija asiakastuessa',
+            const SizedBox(height: 24),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.orange.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.orange, width: 1),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.info_outline, color: Colors.orange),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      'Ilmaisen kokeilujakson jälkeen matkojen kirjaus vaatii Premium-tilauksen. '
+                      'Voit kuitenkin tallentaa ja viedä tietosi.',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.orange.shade900,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 24),
 

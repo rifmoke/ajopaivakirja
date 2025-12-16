@@ -6,7 +6,9 @@ import 'package:intl/intl.dart';
 import '../models/trip.dart';
 import '../providers/trip_provider.dart';
 import '../providers/vehicle_provider.dart';
+import '../providers/subscription_provider.dart';
 import '../config/theme.dart';
+import '../screens/subscription_page.dart';
 
 class AddTripPage extends StatefulWidget {
   const AddTripPage({super.key});
@@ -119,6 +121,51 @@ class _AddTripPageState extends State<AddTripPage> {
 
   void _saveTrip() async {
     if (_formKey.currentState!.validate()) {
+      // Tarkista Premium-tilaus
+      final subscriptionProvider = context.read<SubscriptionProvider>();
+      
+      if (!subscriptionProvider.isPremium) {
+        // Näytä dialogi Premium-tilauksen vaatimisesta
+        if (mounted) {
+          final result = await showDialog<bool>(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Premium-tilaus vaaditaan'),
+                content: const Text(
+                  'Ilmainen kokeilujakso on päättynyt.\n\n'
+                  'Matkojen kirjaus vaatii Premium-tilauksen. '
+                  'Voit kuitenkin tallentaa ja viedä olemassa olevat tietosi.\n\n'
+                  'Haluatko tilata Premium-jäsenyyden?',
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.of(context).pop(false),
+                    child: const Text('Peruuta'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).pop(true),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primaryRed,
+                      foregroundColor: Colors.white,
+                    ),
+                    child: const Text('Näytä Premium'),
+                  ),
+                ],
+              );
+            },
+          );
+          
+          if (result == true && mounted) {
+            // Siirry Premium-sivulle
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const SubscriptionPage()),
+            );
+          }
+        }
+        return;
+      }
+      
       final vehicleProvider = context.read<VehicleProvider>();
       final selectedVehicle = vehicleProvider.selectedVehicle;
       

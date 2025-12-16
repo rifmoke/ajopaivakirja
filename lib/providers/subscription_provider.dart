@@ -16,10 +16,9 @@ class SubscriptionProvider with ChangeNotifier {
   bool _isPremium = false;
   DateTime? _subscriptionEndDate;
   
-  // Product IDs (need to be configured in App Store Connect and Google Play Console)
-  static const String monthlySubscriptionId = 'ajopaivakirja_monthly';
-  static const String yearlySubscriptionId = 'ajopaivakirja_yearly';
-  static const String freeTrialId = 'ajopaivakirja_trial';
+  // Product IDs (configured in Google Play Console)
+  static const String monthlySubscriptionId = 'premium_monthly';
+  static const String yearlySubscriptionId = 'premium_yearly';
   
   bool get isPremium => _isPremium;
   bool get isAvailable => _isAvailable;
